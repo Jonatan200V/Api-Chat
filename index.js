@@ -4,14 +4,14 @@ require('dotenv').config();
 const socket = require('socket.io');
 
 const { PORT, MONGO_URI } = process.env;
-
+const PUERTO = PORT || 4000;
 const main = async () => {
   try {
     mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    const server = app.listen(PORT);
+    const server = app.listen(PUERTO);
     const io = socket(server, {
       cors: {
         origin: 'http://localhost:3000',
