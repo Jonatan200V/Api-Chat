@@ -1,11 +1,7 @@
 {
   "version": 2,
 
-  "name": "petgram-server-TU_NOMBRE",
-
-  "alias": ["petgram-api-TU_NOMBRE"],
-
-  "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+  "builds": [{ "src": "./index.js", "use": "@vercel/node" }],
 
   "routes": [
     {
@@ -15,8 +11,8 @@
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
       },
 
-      "src": "/.*",
-      "dest": "index.js"
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
